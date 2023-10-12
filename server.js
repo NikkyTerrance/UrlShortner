@@ -20,6 +20,7 @@ app.set('view engine', 'ejs');
 app.use(express.urlencoded({
     extended:false
 }))
+app.use('/views', express.static('views'));
 
 app.get('/', async (req,res)=> {
     const shortUrls = await ShortUrl.find()
