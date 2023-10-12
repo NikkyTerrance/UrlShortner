@@ -9,37 +9,53 @@
     <title>Document</title>
 </head>
 <body>
+    <ul class="background">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+     </ul>
+
 
 
     <div class="container">
-        <div class="info">
-            <h1>URL made short</h1>
-            <form action="/shortUrls" method="POST">
-                <label for="fullURL">url</label>
-                <input type="url" name="fullURL" id="fullURL">
-                <button type="submit">Shorten</button>
+            <h1 class="title">URL made short</h1>
+            
+            <form class="frm"   action="/shortUrls" method="POST">
+                <div>
+                    <input class="input" placeholder="Url" type="url" name="fullURL" id="fullURL">
+                    <button class="submit" type="submit">Shorten</button>
+                </div>
             </form>
-        </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Full Url</th>
-                    <th>Short Url</th>
-                    <th>Clicks</th>
-
-                </tr>
-            </thead>
-            <tbody>
-                <% shortUrls.forEach(shortUrl => { %>
-                    <tr>
-                    <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
-                    <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
-                    <td><%= shortUrl.clicks %></td>
-                    </tr>
-                <% }) %>
-            </tbody>
-        </table>
+            
+            <div class="table-container">
+                <table class="tbl">
+                    <thead>
+                        <tr>
+                            <th>Full Url</th>
+                            <th>Short Url</th>
+                            <th>Clicks</th>
+        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% shortUrls.forEach(shortUrl => { %>
+                            <tr>
+                            <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
+                            <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                            <td><%= shortUrl.clicks %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        
     </div>
 </body>
 </html>
