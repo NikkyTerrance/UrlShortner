@@ -206,3 +206,7 @@ undefined
     left: 90vw;
     top: 54vh;
 }
+
+.table-container a {
+    text-decoration: none;
+}
