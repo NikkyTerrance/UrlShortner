@@ -8,9 +8,15 @@ const app = express();
 
 
 //mongoose
+// 'mongodb://localhost/urlShortner'
+const dbUrl = "mongodb+srv://nikkydocode:KQIisXEcby5jDFRS@cluster0.pgttnew.mongodb.net/";
 
-mongoose.connect('mongodb://localhost/urlShortner',{
+mongoose.connect(dbUrl,{
     useNewUrlParser:true , useUnifiedTopology: true
+}).then(()=>{
+    console.log("Connected to DB");
+}).catch((e)=>{
+    console.log("error:", e);
 })
 
 
