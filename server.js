@@ -9,7 +9,7 @@ const app = express();
 
 //mongoose
 
-mongoose.connect('mongodb://127.0.0.1/urlShortner',{
+mongoose.connect('mongodb://localhost/urlShortner',{
     useNewUrlParser:true , useUnifiedTopology: true
 })
 

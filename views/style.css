@@ -39,12 +39,12 @@
 
 
 .frm{
-    margin-top: 4rem;
+    margin-top: 0.5rem;
 }
 
 .tbl{
     border-collapse: collapse;
-    width: 100%;
+    /* width: 100%; */
 }
 
 th,
@@ -101,7 +101,7 @@ tr:nth-of-type(2n){
     font-weight: bold;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    background-color: var(--back-colour);
+    background-color: var(--light-heading);
     border: none;
     cursor: pointer;
     color: #fff;
