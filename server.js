@@ -3,15 +3,18 @@ const mongoose = require ('mongoose');
 const shortUrl = require('./models/shortUrl');
 const ShortUrl = require ('./models/shortUrl')
 const app = express();
+require('dotenv').config();
+
 
 
 
 
 //mongoose
 // 'mongodb://localhost/urlShortner'
-const dbUrl = "mongodb+srv://nikkydocode:KQIisXEcby5jDFRS@cluster0.pgttnew.mongodb.net/";
 
-mongoose.connect(dbUrl,{
+const dburl = process.env.DB_URL;
+
+mongoose.connect(dburl,{
     useNewUrlParser:true , useUnifiedTopology: true
 }).then(()=>{
     console.log("Connected to DB");
@@ -47,5 +50,5 @@ app.get('/:shortUrl',async (req, res)=> {
 
   res.redirect(shortUrl.full)
 })
-
-app.listen(process.env.PORT || 5000);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, ()=> console.log(`Server Started on port: ${PORT} `));
