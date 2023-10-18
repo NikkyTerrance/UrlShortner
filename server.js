@@ -5,12 +5,7 @@ const ShortUrl = require ('./models/shortUrl')
 const app = express();
 require('dotenv').config();
 
-
-
-
-
 //mongoose
-// 'mongodb://localhost/urlShortner'
 
 const dburl = process.env.DB_URL;
 
